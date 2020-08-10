@@ -1,0 +1,9 @@
+crash*
+hello-world
+heartbleed
+c-ares
+scratch
+*.o
+*.a
+*.log
+corpus/*

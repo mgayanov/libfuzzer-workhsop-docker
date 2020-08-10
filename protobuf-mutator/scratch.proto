@@ -1,0 +1,11 @@
+syntax = "proto2";
+package fuzz_package;
+
+//https://developers.google.com/protocol-buffers/docs/overview
+
+message FuzzData{
+  required int32 a = 1;
+  required int32 b = 2;
+  required int32 c = 3;
+  required string d = 4;
+}

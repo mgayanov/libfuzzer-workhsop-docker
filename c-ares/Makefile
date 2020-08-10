@@ -1,7 +1,7 @@
 CXX = clang++-9
 CXXFLAGS = -fsanitize=fuzzer,address -g
 
-CARES_PATH = /opt/c-ares
+CARES_PATH = /home/workshop/c-ares/src
 
 INCLUDES = -I$(CARES_PATH)
 

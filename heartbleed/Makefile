@@ -1,7 +1,7 @@
 CXX = clang++-9
 CXXFLAGS = -fsanitize=fuzzer,address -g
 
-OPENSSL_PATH = /opt/openssl
+OPENSSL_PATH = /home/workshop/heartbleed/src
 
 INCLUDES = -I$(OPENSSL_PATH)/include
 
