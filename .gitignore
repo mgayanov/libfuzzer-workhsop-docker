@@ -1,9 +1,9 @@
 crash*
-hello-world
-heartbleed
-c-ares
 scratch
 *.o
-*.a
+protobuf-mutator/scratch.pb.a
 *.log
-corpus/*
+*.pb.cc
+*.pb.h
+libpng/libpng
+libpng/corpus/*
