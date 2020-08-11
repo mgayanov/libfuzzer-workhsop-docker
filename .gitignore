@@ -7,3 +7,4 @@ protobuf-mutator/scratch.pb.a
 *.pb.h
 libpng/libpng
 libpng/corpus/*
+freetype2/corpus

@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt-get update && \
-        apt-get -y install build-essential gcc clang-9 git libtool m4 automake cmake zlib1g-dev liblzma-dev
+        apt-get -y install build-essential gcc clang-9 git libtool m4 automake cmake zlib1g-dev liblzma-dev libarchive-dev
 
 COPY protobuf-mutator/protoc /usr/bin/protoc
 
@@ -36,6 +36,18 @@ ADD libpng/libpng-1.2.56.tar.gz /tmp
 RUN cd /tmp/libpng-1.2.56 && \
         CC=clang-9 CFLAGS="-fsanitize=address,fuzzer-no-link -g" ./configure --enable-shared=no && \
         make install && \
-        rm -rf /tmp/libpng
+        rm -rf /tmp/libpng-1.2.56
+
+RUN cd /tmp && git clone https://github.com/Mojang/freetype2  && \
+        cd freetype2 && \
+        git reset --hard cd02d359a6d0455e9d16b87bf9665961c4699538 && \
+        ./autogen.sh && \
+        CC=clang-9 CFLAGS="-fsanitize=address,fuzzer-no-link -g" ./configure \
+                --disable-shared \
+                --with-harfbuzz=no \
+                --with-bzip2=no \
+                --with-png=no && \
+        make install && \
+        rm -rf /tmp/freetype2
 
 WORKDIR /home/workshop
