@@ -1,3 +1,10 @@
 #!/bin/bash
 
-./compressed-test
+case "$1" in
+    mutator)
+        ./compressed-test+mutator
+        ;;
+    *)
+        ./compressed-test
+esac
+

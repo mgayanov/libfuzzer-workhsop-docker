@@ -1,2 +1,15 @@
+CXX = clang++-9
+CXXFLAGS = -g
+
+SOURCE = hello-world.cpp
+TARGET = hello-world
+
+all: CXXFLAGS += -fsanitize=fuzzer
 all:
-	clang++-9 -fsanitize=fuzzer,address hello-world.cpp -o hello-world
+	$(CXX) $(CXXFLAGS) $(SOURCE) -o $(TARGET)
+
+
+asan: CXXFLAGS += -fsanitize=fuzzer,address
+asan: TARGET = hello-world+asan
+asan:
+	$(CXX) $(CXXFLAGS) $(SOURCE) -o $(TARGET)
