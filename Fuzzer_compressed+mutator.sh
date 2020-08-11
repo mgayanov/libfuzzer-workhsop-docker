@@ -1,3 +1,6 @@
 #!/bin/bash
 
-docker run --rm -ti -v `pwd`/compressed:/home/workshop/compressed workshop /bin/bash -c "cd compressed && ./build.sh mutator && ./run.sh mutator"
+docker run --rm -ti \
+    -v `pwd`/compressed:/home/workshop/compressed \
+    m1gayanov/libfuzzer-workshop \
+    /bin/bash -c "cd compressed && ./build.sh mutator && ./run.sh mutator"

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t workshop .
+docker pull m1gayanov/libfuzzer-workshop:latest

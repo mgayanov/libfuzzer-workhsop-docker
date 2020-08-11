@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt-get update && \
-        apt-get -y install build-essential gcc clang-9 git libtool m4 automake cmake zlib1g-dev liblzma-dev libarchive-dev
+        apt-get -y install build-essential gcc clang-9 git libtool m4 cmake automake zlib1g-dev liblzma-dev libarchive-dev
 
 COPY protobuf-mutator/protoc /usr/bin/protoc
 
